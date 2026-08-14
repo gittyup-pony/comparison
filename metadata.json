@@ -1,0 +1,6 @@
+{
+  "name": "Property Sample Comparison",
+  "description": "Side-by-side comparison tool for Property Sample V1 and Property Sample V2 websites.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
