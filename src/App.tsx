@@ -15,7 +15,7 @@ export default function App() {
   const [activeMode, setActiveMode] = useState<ViewMode>('side-by-side');
   const [url1, setUrl1] = useState<string>(DEFAULT_SITE_1);
   const [url2, setUrl2] = useState<string>(DEFAULT_SITE_2);
-  const [useProxy, setUseProxy] = useState<boolean>(true); // Proxy enabled by default for smooth cross-origin frame loading
+  const [useProxy, setUseProxy] = useState<boolean>(false); // Direct frame embed by default for standard sites
   const [selectedDevice, setSelectedDevice] = useState<DevicePreset>(DEVICE_PRESETS[0]); // Fluid fit
   const [isPortrait, setIsPortrait] = useState<boolean>(false);
   const [zoomScale, setZoomScale] = useState<number>(1);

@@ -33,8 +33,14 @@ async function startServer() {
 
       let html = await response.text();
 
+      // Rewrite root-relative URLs (src="/...", href="/...", action="/...") to point to target origin
+      const origin = parsedUrl.origin;
+      html = html.replace(/(src|href|action)=(["'])\/(?!\/)/gi, (match, attr, quote) => {
+        return `${attr}=${quote}${origin}/`;
+      });
+
       // Inject base tag so relative links, images, and styles resolve correctly to original domain
-      const baseHref = `${parsedUrl.origin}/`;
+      const baseHref = `${origin}/`;
       const baseTag = `<base href="${baseHref}">`;
 
       if (html.includes("<head>")) {
